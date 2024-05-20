@@ -1,0 +1,8 @@
+.hstack {
+  display: flex;
+  gap: var(--hstack-gap, 0);
+}
+
+.hstack--align-center {
+  align-items: center;
+}

@@ -1,0 +1,18 @@
+/**
+ * Dynamic Grid
+ *
+ * Cutstomizable grid system that automatically wraps depending on a set
+ * minimum width of columns and the total number of columns at most.
+ *
+ * Set the following custom properties to adjust the grid settings:
+ *
+ * --grid-gap: <length>|<percentage>;
+ * --grid-columns: number;
+ * --grid-min-width: <length>|<percentage>;
+ */
+
+.dynamic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(min(var(--grid-min-width, 0), 100%), calc((100% - calc(calc(var(--grid-columns, 1) - 1) * var(--grid-gap, 0))) / var(--grid-columns, 1))), 1fr));
+  grid-gap: var(--grid-gap, 0);
+}

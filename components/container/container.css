@@ -1,0 +1,16 @@
+/**
+ * Container
+ *
+ * Traditional container element to center content on the page
+ * modernized with a min() function.
+ */
+
+:root {
+  --container-max-width: 1200px;
+  --container-gutter: 2rem;
+}
+
+.container {
+  width: min(var(--container-max-width), 100% - (var(--container-gutter) * 2));
+  margin-inline: auto;
+}
