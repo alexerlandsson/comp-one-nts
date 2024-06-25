@@ -1,4 +1,7 @@
 .hstack {
+  /* Reset the custom properties to make the component nestable */
+  --hstack-gap: initial;
+
   display: flex;
   gap: var(--hstack-gap, 0);
 }

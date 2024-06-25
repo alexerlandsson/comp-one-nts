@@ -1,4 +1,7 @@
 .vstack {
+  /* Reset the custom properties to make the component nestable */
+  --vstack-gap: initial;
+
   display: flex;
   flex-direction: column;
   gap: var(--vstack-gap, 0);
