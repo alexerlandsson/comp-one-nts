@@ -1,3 +1,13 @@
+/**
+ * V Stack
+ *
+ * Used to layout components vertically similar to VStack from SwiftUI.
+ *
+ * Set the following custom properties to adjust the stack settings:
+ *
+ * --vstack-gap: <length>\|<percentage>;
+ */
+
 .vstack {
   /* Reset the custom properties to make the component nestable */
   --vstack-gap: initial;
