@@ -5,13 +5,16 @@
  *
  * Set the following custom properties to adjust the stack settings:
  *
- * --vstack-gap: <length>\|<percentage>;
+ * --vstack-gap: <length-percentage>;
  */
 
-.vstack {
-  /* Reset the custom properties to make the component nestable */
-  --vstack-gap: initial;
+@property --vstack-gap {
+  syntax: "<length-percentage>";
+  initial-value: 0;
+  inherits: false;
+}
 
+.vstack {
   display: flex;
   flex-direction: column;
   gap: var(--vstack-gap, 0);

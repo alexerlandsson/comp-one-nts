@@ -5,13 +5,16 @@
  *
  * Set the following custom properties to adjust the stack settings:
  *
- * --hstack-gap: <length>\|<percentage>;
+ * --hstack-gap: <length-percentage>;
  */
 
-.hstack {
-  /* Reset the custom properties to make the component nestable */
-  --hstack-gap: initial;
+@property --hstack-gap {
+  syntax: "<length-percentage>";
+  initial-value: 0;
+  inherits: false;
+}
 
+.hstack {
   display: flex;
   gap: var(--hstack-gap, 0);
 }

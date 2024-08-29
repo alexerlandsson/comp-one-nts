@@ -6,17 +6,30 @@
  *
  * Set the following custom properties to adjust the grid settings:
  *
- * --grid-gap: <length>|<percentage>;
- * --grid-columns: number;
- * --grid-min-width: <length>|<percentage>;
+ * --grid-gap: <length-percentage>;
+ * --grid-columns: <number>;
+ * --grid-min-width: <length-percentage>;
  */
 
-.dynamic-grid {
-  /* Reset the custom properties to make the component nestable */
-  --grid-min-width: initial;
-  --grid-columns: initial;
-  --grid-min-width: initial;
+@property --grid-min-width {
+  syntax: "<length-percentage>";
+  initial-value: 0;
+  inherits: false;
+}
 
+@property --grid-columns {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --grid-min-width {
+  syntax: "<length-percentage>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.dynamic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(max(min(var(--grid-min-width, 0), 100%), calc((100% - calc(calc(var(--grid-columns, 1) - 1) * var(--grid-gap, 0))) / var(--grid-columns, 1))), 1fr));
   grid-gap: var(--grid-gap, 0);
